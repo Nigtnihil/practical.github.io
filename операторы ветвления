@@ -1,0 +1,53 @@
+import javax.swing.plaf.synth.SynthUI;
+import java.util.Scanner;
+
+class Lab1_Variant15_23pro3_KRUGLIKOV{ }
+public class Main {
+    public static void main(String[] args) {
+        Scanner vvod = new Scanner(System.in);
+        //15 if,else
+
+        System.out.print("Введите месяц(номер): ");
+        int m=vvod.nextInt();
+        if (m==12  m==1  m==2) System.out.println("winter");
+        else if (m==3  m==4  m==5) System.out.println("spring");
+        else if (m==6  m==7  m==8) System.out.println("summer");
+        else if (m==9  m==10  m==11) System.out.println("autumn");
+        else System.out.println("invalid");
+
+
+        //15 switch
+        System.out.print("Введите секунды: ");
+        int sec=vvod.nextInt();
+        switch (sec){
+            case -1: System.out.println(sec+" invalid");break;
+            default:if(sec<60) System.out.println(sec+" seconds");
+            else if (sec>=60 && sec<3600) System.out.println(sec+" minutes");
+            else if (sec>=3600) System.out.println(sec+" hours");
+            else System.out.println(" invalid");
+        }
+
+
+        //15 ?
+        System.out.println("Введите l цифру");
+        int l=vvod.nextInt();
+        System.out.println("Введите x цифру");
+        int x=vvod.nextInt();
+        System.out.println("Введите r цифру");
+        int r=vvod.nextInt();
+        System.out.println((l<=x && x<=r) ? "in":"out");
+    }
+}
+import javax.swing.plaf.synth.SynthUI;
+
+class Lab1_Variant11_23pro3_IGNATOV{ }
+public class Main {
+    public static void main(String[] args) {
+        //15
+        for (int i=1;i<=5;i++){
+            for (int j=1;j<=5;j++){
+                System.out.println("Катет 1-"+i+" катет 2-"+j+" гипотенуза="+Math.pow(i,2)+Math.pow(j,2));
+            }
+        }
+    }
+}
