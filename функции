@@ -1,0 +1,88 @@
+public class Main {
+
+   
+    public static boolean isPalindrome(int n) {
+       
+        if (n < 0) {
+            return false;
+        }
+
+        int originalNumber = n; 
+        int reversedNumber = 0; 
+
+        
+        while (n > 0) {
+            int digit = n % 10; 
+            reversedNumber = reversedNumber * 10 + digit; 
+            n /= 10; 
+        }
+
+       
+        return originalNumber == reversedNumber;
+    }
+
+  
+    public static boolean isArmstrong(int n) {
+        
+        if (n < 0) {
+            return false;
+        }
+
+        String numberStr = String.valueOf(n); 
+        int numberOfDigits = numberStr.length(); 
+        int sumOfPowers = 0; 
+        int tempNumber = n;
+        
+        while (tempNumber > 0) {
+            int digit = tempNumber % 10; 
+           
+            sumOfPowers += Math.pow(digit, numberOfDigits);
+            tempNumber /= 10; 
+        }
+
+       
+        return n == sumOfPowers;
+    }
+
+    
+    public static int nextEven(int n) {
+      
+        if (n % 2 == 0) {
+            return n;
+        } else {
+           
+            return n + 1;
+        }
+    }
+
+ 
+    public static void main(String[] args) {
+
+       
+        System.out.println("--- Тестирование isPalindrome ---");
+        int[] palindromicTests = {121, 123, 3443, 5, -121, 12321};
+        for (int testNum : palindromicTests) {
+            boolean result = isPalindrome(testNum);
+            System.out.println("Число: " + testNum + ", Палиндром? " + result);
+        }
+        System.out.println(); // Пустая строка для разделения
+
+    
+        System.out.println("--- Тестирование isArmstrong ---");
+        int[] armstrongTests = {153, 370, 371, 407, 1634, 123, 1, 0};
+        for (int testNum : armstrongTests) {
+            boolean result = isArmstrong(testNum);
+            System.out.println("Число: " + testNum + ", Число Армстронга? " + result);
+        }
+        System.out.println();
+
+    
+        System.out.println("--- Тестирование nextEven ---");
+        int[] nextEvenTests = {5, 4, 0, -3, -4, 101};
+        for (int testNum : nextEvenTests) {
+            int result = nextEven(testNum);
+            System.out.println("Число: " + testNum + ", Ближайшее чётное: " + result);
+        }
+        System.out.println();
+    }
+}
