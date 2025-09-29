@@ -13,3 +13,41 @@ public class Main {
         }
     }
 }
+ Пользователь вводит ширину и высоту. Выведи прямоугольник из * заданного размера.
+ээто по циклам задание
+import java.util.Scanner; 
+public class Main {
+
+    public static void main(String[] args) {
+
+       
+        Scanner scanner = new Scanner(System.in);
+
+        
+        int width = scanner.nextInt(); 
+      
+        System.out.print("Введите высоту прямоугольника: ");
+        int height = scanner.nextInt(); // Считываем введенное число как высоту
+
+       
+        if (width <= 0 || height <= 0) {
+            System.out.println("Ширина и высота должны быть положительными числами.");
+            return; // Завершаем выполнение программы, если ввод некорректен
+        }
+
+       
+        System.out.println("Вывод прямоугольника:");
+
+        
+        for (int i = 0; i < height; i++) {
+            // Внутренний цикл: отвечает за столбцы (ширину)
+            for (int j = 0; j < width; j++) {
+                System.out.print("*"); // Выводим звездочку без перехода на новую строку
+            }
+            System.out.println(); // После вывода всех звездочек в строке, переходим на новую строку
+        }
+
+      
+        scanner.close();
+    }
+}
