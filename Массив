@@ -1,0 +1,51 @@
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите количество элементов в массиве: ");
+        int n = scanner.nextInt(); 
+
+        
+        int[] array = new int[n];
+
+        System.out.println("Введите элементы массива:");
+       
+        for (int i = 0; i < n; i++) {
+            System.out.print("Элемент [" + i + "]: ");
+            array[i] = scanner.nextInt(); // Считываем каждый элемент
+        }
+
+      
+        int minPositive = Integer.MAX_VALUE;
+        boolean foundPositive = false; 
+
+        for (int element : array) { 
+            if (element > 0) { 
+                foundPositive = true; 
+                if (element < minPositive) { 
+                    minPositive = element;
+                }
+            }
+        }
+
+      
+        if (foundPositive) {
+            System.out.println("\nМинимальный положительный элемент в массиве: " + minPositive);
+        } else {
+            System.out.println("\nВ массиве нет положительных элементов.");
+        }
+
+     
+        for(int i=0;i<n;i++){
+           System.out.println(array[i]);
+        }
+
+      
+        scanner.close();
+    }
+}
